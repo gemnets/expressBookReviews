@@ -34,7 +34,6 @@ public_users.get('/', function (req, res) {
     res.send(JSON.stringify(books, null, 2)); // null for replacer, 2 for pretty printing
 });
 
-
 const fetchBooks = async () => {
     try {
         const response = await axios.get('http://localhost:5000'); // Ensure this endpoint works
@@ -55,11 +54,6 @@ const fetchBooks = async () => {
         throw new Error('Error fetching books: ' + error.message);
     }
 };
-
-
-
-
-
 
 // Get the book list available in the shop
 public_users.get('/books', async (req, res) => {

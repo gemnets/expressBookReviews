@@ -120,9 +120,9 @@ public_users.get('/author/:author', function (req, res) {
   const foundBooks = []; // Array to hold books by the author
 
   // Iterate through the books object to find matches
-  for (let key in books) {
-      if (books[key].author.toLowerCase() === author.toLowerCase()) {
-          foundBooks.push({ key, ...books[key] }); // Push matching book to foundBooks array
+  for (let isbn in books) {
+      if (books[isbn].author.toLowerCase() === author.toLowerCase()) {
+          foundBooks.push({ isbn, ...books[isbn] }); // Push matching book to foundBooks array
       }
   }
 
@@ -167,9 +167,9 @@ public_users.get('/title/:title', function (req, res) {
     const foundBooks = []; // Array to hold books with the specified title
   
     // Iterate through the books object to find matches
-    for (let key in books) {
-        if (books[key].title.toLowerCase() === title.toLowerCase()) {
-            foundBooks.push({ key, ...books[key] }); // Push matching book to foundBooks array
+    for (let isbn in books) {
+        if (books[isbn].title.toLowerCase() === title.toLowerCase()) {
+            foundBooks.push({ isbn, ...books[isbn] }); // Push matching book to foundBooks array
         }
     }
   
